@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "banana apple toy-car" "beer shoe ." ". . .";
+  }
+  
+  .banana { grid-area: banana; }
+  
+  .apple { grid-area: apple; }
+  
+  .toy-car { grid-area: toy-car; }
+  
+  .beer { grid-area: beer; }
+  
+  .shoe { grid-area: shoe; }
