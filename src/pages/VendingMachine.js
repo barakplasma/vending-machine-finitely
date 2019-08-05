@@ -55,7 +55,7 @@ function VendingMachine() {
 
   const banana = makeProduct(inventory, 'banana')
   const apple = makeProduct(inventory, 'apple')
-  const beer = makeProduct(inventory, 'apple')
+  const beer = makeProduct(inventory, 'beer')
   const toyCar = makeProduct(inventory, "toy-car")
   const shoe = makeProduct(inventory, 'shoe')
 
