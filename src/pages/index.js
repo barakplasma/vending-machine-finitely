@@ -22,7 +22,7 @@ function Index() {
         !
       </h2>
       <p>
-        This app was built with 
+        This app was built with
         <a
           href="https://github.com/zeit/now-examples/blob/master/gatsby-node-typescript"
           target="_blank"
@@ -36,7 +36,7 @@ function Index() {
         <a href="https://zeit.co/docs/v2/serverless-functions/introduction">Node.js (TypeScript)</a> function for generating a mock vending machine inventory.
       </p>
       <br />
-     <VendingMachine/>
+      <VendingMachine />
     </main>
   );
 }

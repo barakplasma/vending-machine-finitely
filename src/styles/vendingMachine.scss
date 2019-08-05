@@ -51,6 +51,7 @@
         border: 1px solid black;
         text-align: center;
         @include two-tone();
+
         .wallet {
             font-family: digital, 'Courier New', Courier, monospace;
             color: orange;
