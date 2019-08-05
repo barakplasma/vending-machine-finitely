@@ -5,7 +5,7 @@ const Product = ({label, icon, price = 0}) => (<div><span role="img" aria-label=
 <br/>
 {label}
 <br/>
-<span>price: {price}</span>
+<span>price: {Number(price).toFixed(2)}</span>
 </div>
 )
 
@@ -13,13 +13,13 @@ const Keypad = () => {
   const [addAmount, setAmount] = useState(1);
   const [wallet, setWallet] = useState(1);
   return (<div className="keypad">
-  <span className="wallet">{wallet}</span>
+  <span className="wallet">{Number(wallet).toFixed(2)}</span>
   <br/>
   <br/>
   <input type="number" min="0.00" max="100.00" step="1" onChange={e=>setAmount(parseInt(e.currentTarget.value, 10))}/>
   <button onClick={() => {
     setWallet(wallet + addAmount);
-  }}>Add {addAmount}</button>
+  }}>Add ${addAmount}</button>
   </div>)
 }
 
