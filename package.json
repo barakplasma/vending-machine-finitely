@@ -20,5 +20,8 @@
   "scripts": {
     "dev": "gatsby develop -p $PORT",
     "build": "gatsby build"
+  },
+  "engines": {
+    "node": ">=10 < 11"
   }
 }

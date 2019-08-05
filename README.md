@@ -1,18 +1,14 @@
-# Gatsby Example
+# Vending Machine Finite State Machine
 
-This directory is a brief example of a [Gatsby](https://www.gatsbyjs.org/) app with serverless functions that can be deployed to ZEIT Now with zero configuration.
+This project is a brief example of a finite state machine library built on top of [Gatsby](https://www.gatsbyjs.org/) app with serverless functions for creating mock/real data that can be deployed to ZEIT Now with zero configuration.
 
-## How we created this example 
-
-To get started with Gatsby on Now, you can use the [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/) to initialize the project:
-
-```shell
-$ gatsby new gatsby-site
-```
+## Development / Local Running
+Use `now dev` to develop locally, and visit the link it produces to see the live local version.
+For example, it'll provide the graphql endpoint: `http://localhost:51514/___graphql` and you should visit the root `http://localhost:51514/`
 
 ## Deploying this Example
 
-Once initialized, you can deploy the Gatsby example with just a single command:
+Once initialized, you can deploy this with just a single command:
 
 ```shell
 $ now
