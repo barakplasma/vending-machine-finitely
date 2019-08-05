@@ -1,10 +1,15 @@
 @import "variables";
 
+@font-face {
+    font-family: digital;
+    src: url(digital-7.ttf);
+}
+
 .vending-machine {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr .1fr;
+    grid-template-columns: 1fr 1fr 1fr .5fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "banana apple toy-car .""beer shoe empty-rack keypad""dispenser dispenser dispenser .";
+    grid-template-areas: "banana apple toy-car logo""beer shoe empty-rack keypad""dispenser dispenser dispenser .";
     background-color: $vendingMachinePlastic;
     width: 50vw;
     margin: 0 25%;
@@ -16,23 +21,42 @@
         background: darken($color: $vendingMachinePlastic, $amount: 10);
     }
 
-    div:not(.dispenser) {
+    .product-rack:not(.dispenser) {
         border: 1px solid black;
         width: 90%;
         height: 75%;
         text-align: center;
-        padding: 40% 0;
+        padding: 20% 0;
     }
 
     .product-rack {
         background: lighten($color: $vendingMachinePlastic, $amount: 10);
     }
 
+    .logo {
+        @include two-tone();
+        grid-area: logo;
+        height: 75%;
+        width: 75%;
+        text-align: center;
+        padding: 60% 0;
+    }
+
     .keypad {
         grid-area: keypad;
         margin: 0 1vw 0 0;
         width: 3rem;
+        width: 90%;
+        height: 75%;
+        border: 1px solid black;
+        text-align: center;
         @include two-tone();
+        .wallet {
+            font-family: digital, 'Courier New', Courier, monospace;
+            color: orange;
+            background-color: black;
+            font-size: 2rem;
+        }
     }
 
     .banana {
@@ -60,10 +84,12 @@
     }
 
     .dispenser {
+        $height: 8rem;
         grid-area: dispenser;
         border: 1px solid black;
         width: 90%;
-        height: 75%;
+        height: $height;
+        line-height: $height;
         text-align: center;
         @include two-tone();
     }
