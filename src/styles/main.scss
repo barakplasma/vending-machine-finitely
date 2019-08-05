@@ -1,5 +1,6 @@
 @import "~tachyons-sass/tachyons.scss";
 @import "variables";
+@import "./vendingMachine.scss";
 
 @mixin borderRadius($radius: 5px) {
   -webkit-border-radius: $radius;

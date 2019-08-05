@@ -1,0 +1,70 @@
+@import "variables";
+
+.vending-machine {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr .1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "banana apple toy-car .""beer shoe empty-rack keypad""dispenser dispenser dispenser .";
+    background-color: $vendingMachinePlastic;
+    width: 50vw;
+    margin: 0 25%;
+    height: 50vh;
+    justify-items: center;
+    align-items: center;
+
+    @mixin two-tone {
+        background: darken($color: $vendingMachinePlastic, $amount: 10);
+    }
+
+    div:not(.dispenser) {
+        border: 1px solid black;
+        width: 90%;
+        height: 75%;
+        text-align: center;
+        padding: 40% 0;
+    }
+
+    .product-rack {
+        background: lighten($color: $vendingMachinePlastic, $amount: 10);
+    }
+
+    .keypad {
+        grid-area: keypad;
+        margin: 0 1vw 0 0;
+        width: 3rem;
+        @include two-tone();
+    }
+
+    .banana {
+        grid-area: banana;
+    }
+
+    .apple {
+        grid-area: apple;
+    }
+
+    .toy-car {
+        grid-area: toy-car;
+    }
+
+    .beer {
+        grid-area: beer;
+    }
+
+    .shoe {
+        grid-area: shoe;
+    }
+
+    .empty-rack {
+        grid-area: empty-rack;
+    }
+
+    .dispenser {
+        grid-area: dispenser;
+        border: 1px solid black;
+        width: 90%;
+        height: 75%;
+        text-align: center;
+        @include two-tone();
+    }
+}
