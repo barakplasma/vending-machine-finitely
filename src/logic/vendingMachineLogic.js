@@ -38,7 +38,7 @@ const makeProductOnDispense = (productFSM) => {
 };
 const makeProduct = (inventory, product) => {
     const fsm = makeProductFSM(inventory, product)
-    return {dispense: makeProductOnDispense(fsm), fsm, details: inventory[product]};
+    return {dispense: makeProductOnDispense(fsm), fsm, details: inventory[product], label: product};
 };
 
 /**

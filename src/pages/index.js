@@ -35,6 +35,7 @@ function Index() {
         which contains a serverless{' '}
         <a href="https://zeit.co/docs/v2/serverless-functions/introduction">Node.js (TypeScript)</a> function for generating a mock vending machine inventory.
       </p>
+      <p>Open the console to see some of the actions happening in the finite state machine</p>
       <br />
       <VendingMachine />
     </main>

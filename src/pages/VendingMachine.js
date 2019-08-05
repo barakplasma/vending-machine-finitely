@@ -27,7 +27,7 @@ const Keypad = ({wallet, setWallet}) => {
     <br />
     <input type="number" min="0.00" max="100.00" step="1" onChange={e => setAmount(parseInt(e.currentTarget.value, 10))} />
     <button onClick={() => {
-      setWallet(wallet + addAmount);
+      wallet + addAmount < 100 ? setWallet(wallet + addAmount): setWallet(wallet);
     }}>Add ${addAmount}</button>
   </div>)
 }
@@ -42,6 +42,7 @@ function VendingMachine() {
   });
 
   const [wallet, setWallet] = useState(1);
+  const [dispensedItems, setDispensedItems] = useState({});
 
   useEffect(() => {
     async function getVendingMachineInventory() {
@@ -67,6 +68,9 @@ function VendingMachine() {
       product.dispense(wallet)
       if (ifDispensing(product.fsm)) {
         subtractFromWallet(product.details.price);
+        dispensedItems[product.label] = dispensedItems[product.label] ? dispensedItems[product.label]+1 : 1;
+        setDispensedItems(dispensedItems);
+        console.log('dispensed: ', dispensedItems)
       }
       product.fsm.dispatch({ inputName: 'dispensed' })
     }
@@ -75,7 +79,7 @@ function VendingMachine() {
   return (
     <div className="vending-machine">
       <div className="product-rack banana">
-        <Product label='banana' icon='🍌' price={inventory.banana.price} onClick={() => {banana.dispense(wallet); subtractFromWallet(inventory.banana.price)}} />
+        <Product label='banana' icon='🍌' price={inventory.banana.price} onClick={vending(banana)} />
       </div>
       <div className="product-rack apple">
         <Product label='apple' icon='🍎' price={inventory.apple.price} onClick={vending(apple)} /></div>
@@ -93,7 +97,7 @@ function VendingMachine() {
         <Product label='empty-rack' icon='❓' price={0} onClick={() => 1}/>
       </div>
       <Keypad wallet={wallet} setWallet={setWallet} />
-      <div className="dispenser">→ Push Here ←</div>
+      <div className="dispenser">→ Dispenser ←</div>
     </div>
   );
 }

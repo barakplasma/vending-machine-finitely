@@ -11,9 +11,11 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: "banana apple toy-car logo""beer shoe empty-rack keypad""dispenser dispenser dispenser .";
     background-color: $vendingMachinePlastic;
+    border: 1px solid black;
+    box-shadow: 14px -14px 5px 0px $vendingMachinePlastic;
     width: 50vw;
     margin: 0 25%;
-    height: 50vh;
+    height: 75vh;
     justify-items: center;
     align-items: center;
 
@@ -26,7 +28,7 @@
         width: 90%;
         height: 75%;
         text-align: center;
-        padding: 20% 0;
+        padding: 40% 0;
     }
 
     .product-rack {
