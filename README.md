@@ -8,7 +8,9 @@ For example, it'll provide the graphql endpoint: `http://localhost:51514/___grap
 
 ## Deploying this Example
 
-Once initialized, you can deploy this with just a single command:
+This project is deployed via the now.sh github integration. A simple push to the master branch will build and deploy this project via CI/CD to the URL [https://vending-machine-finitely.barakplasma.now.sh/](https://vending-machine-finitely.barakplasma.now.sh/)
+
+Alternatively, you can deploy this with just a single command:
 
 ```shell
 $ now
